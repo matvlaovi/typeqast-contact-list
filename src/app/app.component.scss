@@ -1,7 +1,13 @@
+.t-nav {
+    background-image: linear-gradient(to right, #40a7b1 , #72c5cb);
+    border-bottom: 7px solid #94d1d6;
+}
+
 .t-nav-title {
     justify-content: center;
     font-family: 'Jacked Font';
     margin-top: 10px;
     font-size: 32px;
     letter-spacing: 0.2em;
+    color: #fefefe;
 }
