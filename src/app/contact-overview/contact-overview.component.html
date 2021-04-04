@@ -1,0 +1,17 @@
+<div class="t-header-container"
+     fxLayout="row"
+     fxLayoutAlign="center center"
+     fxLayoutGap="12px">
+
+    <button mat-button
+            (click)="showFavorites = false;"
+            [ngClass]="{'t-primary-color': !showFavorites}">All contacts</button>
+
+    <div class="t-divider"></div>
+
+    <button mat-button
+            (click)="showFavorites = true;"
+            [ngClass]="{'t-primary-color': showFavorites}">My favorites</button>
+</div>
+
+<app-contact-list [showFavorites]="showFavorites"></app-contact-list>

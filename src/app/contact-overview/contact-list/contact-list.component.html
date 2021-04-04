@@ -1,0 +1,21 @@
+<div fxLayoutAlign="center center"
+     class="t-search-container">
+    <mat-form-field appearance="outline"
+                    class="t-search-form-field">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput
+               [(ngModel)]="searchTerm">
+    </mat-form-field>
+</div>
+
+<div fxLayout="row wrap"
+     fxLayout.lt-sm="column"
+     fxLayoutAlign="center">
+    <ng-container *ngFor="let item of data">
+        <div class="t-contact-card"
+             fxFlex="270px"
+             fxFlex.lt-sm="100%">
+            {{item}}
+        </div>
+    </ng-container>
+</div>

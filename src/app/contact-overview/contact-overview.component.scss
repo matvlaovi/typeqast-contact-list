@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    margin: 0 100px;
+}
+
+.t-header-container {
+    height: 121px;
+    border-bottom: 2px solid #75c1ca;
+    color: #bcc5c4;
+}
+
+.t-divider {
+    border-left: 1px solid #bcc5c4;
+    height: 15px;
+}
+
+button[mat-button] {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.t-primary-color {
+    color: #2ea1ad;
+}

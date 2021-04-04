@@ -1,0 +1,27 @@
+.t-search-container {
+    margin: 50px 0;
+}
+
+.t-search-form-field {    
+    width: 500px;
+}
+
+:host ::ng-deep .mat-form-field-outline {
+    box-shadow: 0 0 20px -6px #c3c3c3;
+}
+
+:host ::ng-deep .mat-form-field-infix {
+    padding-left: 1em;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.t-contact-card {
+    height: 150px;
+    border: 2px solid #e7e7e7;
+    border-radius: 5px;
+    margin: 10px;
+}
