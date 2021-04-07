@@ -1,9 +1,13 @@
 .t-search-container {
-    margin: 50px 0;
+    margin: 50px 0 25px;
+}
+
+.t-search-container mat-icon {
+    color: #bbc4c3;
 }
 
 .t-search-form-field {    
-    width: 500px;
+    width: 525px;
 }
 
 :host ::ng-deep .mat-form-field-outline {
@@ -23,5 +27,58 @@
     height: 150px;
     border: 2px solid #e7e7e7;
     border-radius: 5px;
-    margin: 10px;
+    margin: 12px;
+    position: relative;
+    cursor: pointer;    
+    font-size: 18px;
+    color: #bbc4c3;
+}
+
+.t-contact-card:hover {
+    border-color: #75c1ca;
+}
+
+.t-edit-icon, .t-delete-icon {
+    visibility: hidden;
+}
+
+.t-contact-card:hover .t-edit-icon, .t-contact-card:hover .t-delete-icon {
+    visibility: visible;
+}
+
+.t-contact-card mat-icon {
+    font-size: 18px;
+}
+
+.t-contact-card img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border: 3px solid #dddddd;
+    box-sizing: border-box;
+}
+
+.t-name-container {
+    position: absolute;
+    top: 105px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.t-new-contact-card {
+    height: 150px;
+    border: 2px dashed #c0e3e6;
+    border-radius: 5px;
+    margin: 12px;
+    position: relative;
+    cursor: pointer;
+    color: #98d1d7;
 }

@@ -11,11 +11,38 @@
 <div fxLayout="row wrap"
      fxLayout.lt-sm="column"
      fxLayoutAlign="center">
+    <div class="t-new-contact-card"
+         *ngIf="!showFavorites"
+         fxFlex="270px"
+         fxFlex.lt-sm="100%"
+         fxLayout="column"
+         fxLayoutAlign="center center"
+         fxLayoutGap="3px">
+        <mat-icon>add</mat-icon>
+        <span>Add new</span>
+    </div>
     <ng-container *ngFor="let item of data">
         <div class="t-contact-card"
              fxFlex="270px"
              fxFlex.lt-sm="100%">
-            {{item}}
+            <div fxLayout="row">
+                <button mat-icon-button>
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <span fxFlex></span>
+                <button mat-icon-button
+                        class="t-edit-icon">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button
+                        class="t-delete-icon">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+            <img src="https://americanindependent.com/wp-content/uploads/2019/01/AP_19014569142266-1068x721.jpg">
+            <div class="t-name-container">
+                {{item}}
+            </div>
         </div>
     </ng-container>
 </div>
