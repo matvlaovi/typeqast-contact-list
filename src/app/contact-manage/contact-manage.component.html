@@ -1,0 +1,121 @@
+<div fxLayout="row"
+     fxLayoutAlign="center start"
+     fxLayoutGap="15px"
+     class="t-wrapper">
+    <div fxFlex="200px"
+         class="t-photo">
+        <ngx-avatar [name]="form.get('name').value"
+                    size="190"></ngx-avatar>
+    </div>
+    <div fxFlex="650px">
+        <div [formGroup]="form"
+             fxLayout="column">
+
+            <div class="t-header"
+                 fxLayout="row"
+                 fxLayoutAlign="space-between center">
+                <button mat-icon-button
+                        routerLink="/">
+                    <mat-icon>keyboard_return</mat-icon>
+                </button>
+                <button mat-button
+                        *ngIf="isEdit"
+                        (click)="deleteContact()">
+                    Delete
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+
+            <div class="t-form-section"
+                 fxLayout="column"
+                 fxLayoutAlign="center start"
+                 fxLayoutGap="15px">
+                <div fxLayout="row"
+                     fxLayoutAlign="start center"
+                     fxLayoutGap="15px">
+                    <mat-icon>person</mat-icon>
+                    <span class="t-form-label">full name</span>
+                </div>
+                <mat-form-field appearance="outline"
+                                class="w-300-p">
+                    <input matInput
+                           placeholder="Full Name"
+                           formControlName="name">
+                </mat-form-field>
+            </div>
+
+            <div class="t-form-section"
+                 fxLayout="column"
+                 fxLayoutAlign="center start"
+                 fxLayoutGap="15px">
+                <div fxLayout="row"
+                     fxLayoutAlign="start center"
+                     fxLayoutGap="15px">
+                    <mat-icon>mail</mat-icon>
+                    <span class="t-form-label">email</span>
+                </div>
+                <mat-form-field appearance="outline"
+                                class="w-300-p">
+                    <input matInput
+                           placeholder="Email"
+                           formControlName="email">
+                </mat-form-field>
+            </div>
+
+            <div class="t-form-section"
+                 fxLayout="column"
+                 fxLayoutAlign="center start"
+                 fxLayoutGap="15px">
+                <div fxLayout="row"
+                     fxLayoutAlign="start center"
+                     fxLayoutGap="15px">
+                    <mat-icon>phone</mat-icon>
+                    <span class="t-form-label">numbers</span>
+                </div>
+                <div formArrayName="numbers"
+                     fxFill>
+                    <div *ngFor="let group of numbers.controls; let i=index">
+                        <div fxLayout="row"
+                             fxLayoutAlign="space-between center"
+                             [formGroupName]="i">
+                            <mat-form-field appearance="outline"
+                                            fxFlex="300px">
+                                <input matInput
+                                       placeholder="Number"
+                                       formControlName="number">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <input matInput
+                                       placeholder="Cell"
+                                       formControlName="type">
+                            </mat-form-field>
+                            <button mat-stroked-button
+                                    class="t-round-btn"
+                                    (click)="removeNumber(i)">
+                                <mat-icon>clear</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button mat-button
+                class="t-add-btn"
+                (click)="addNumber()">
+            <mat-icon>add</mat-icon>
+            Add number
+        </button>
+
+        <div class="t-action-btn-wrapper"
+             fxLayout="row"
+             fxLayoutAlign="space-between center">
+            <button mat-flat-button
+                    class="t-cancel-btn"
+                    (click)="cancel()">Cancel</button>
+            <button mat-flat-button
+                    class="t-save-btn"
+                    (click)="save()">Save</button>
+        </div>
+    </div>
+</div>

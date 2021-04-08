@@ -4,7 +4,7 @@
                     class="t-search-form-field">
         <mat-icon matPrefix>search</mat-icon>
         <input matInput
-               [(ngModel)]="searchTerm">
+               [formControl]="searchControl">
     </mat-form-field>
 </div>
 
@@ -12,7 +12,8 @@
      fxLayout.lt-sm="column"
      fxLayoutAlign="center">
     <div class="t-new-contact-card"
-         *ngIf="!showFavorites"
+         routerLink="/add"
+         *ngIf="!favoritesOnly"
          fxFlex="270px"
          fxFlex.lt-sm="100%"
          fxLayout="column"
@@ -21,27 +22,38 @@
         <mat-icon>add</mat-icon>
         <span>Add new</span>
     </div>
-    <ng-container *ngFor="let item of data">
+    <ng-container *ngFor="let contact of contacts">
         <div class="t-contact-card"
              fxFlex="270px"
-             fxFlex.lt-sm="100%">
+             fxFlex.lt-sm="100%"
+             routerLink="/details/{{contact.email}}">
             <div fxLayout="row">
-                <button mat-icon-button>
+                <button mat-icon-button
+                        *ngIf="contact.isFavorite"
+                        (click)="$event.stopPropagation();$event.preventDefault();toggleContactFavorite(contact);">
                     <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button
+                        *ngIf="!contact.isFavorite"
+                        (click)="$event.stopPropagation();$event.preventDefault();toggleContactFavorite(contact);">
+                    <mat-icon>favorite_border</mat-icon>
                 </button>
                 <span fxFlex></span>
                 <button mat-icon-button
-                        class="t-edit-icon">
+                        class="t-edit-icon"
+                        routerLink="/manage/{{contact.email}}">
                     <mat-icon>edit</mat-icon>
                 </button>
                 <button mat-icon-button
+                        (click)="deleteContact(contact)"
                         class="t-delete-icon">
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>
-            <img src="https://americanindependent.com/wp-content/uploads/2019/01/AP_19014569142266-1068x721.jpg">
+            <ngx-avatar [name]="contact.name"
+                        size="70"></ngx-avatar>
             <div class="t-name-container">
-                {{item}}
+                {{contact.name}}
             </div>
         </div>
     </ng-container>

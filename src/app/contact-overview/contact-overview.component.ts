@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ContactOverviewComponent implements OnInit {
 
-    public showFavorites: boolean = false;
+    public favoritesOnly: boolean = false;
 
     constructor() { }
 

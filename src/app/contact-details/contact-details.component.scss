@@ -1,0 +1,27 @@
+.t-wrapper {
+    margin-top: 50px;
+}
+
+.t-photo ngx-avatar {
+    width: 190px;
+    height: 190px;
+    border: 4px solid #dddddd;
+    display: block;
+    background-color: #abd9de;
+}
+
+.t-header {
+    height: 100px;
+    border-bottom: 2px solid #75c1ca;
+    color: #bbc4c3;
+}
+
+.t-details mat-icon {    
+    color: #2ea1ad;
+    font-size: 18px;
+    height: 18px;
+}
+
+.t-label {
+    color: #2ea1ad;
+}

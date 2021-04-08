@@ -50,9 +50,7 @@
     font-size: 18px;
 }
 
-.t-contact-card img {
-    border-radius: 50%;
-    object-fit: cover;
+.t-contact-card ngx-avatar {
     width: 70px;
     height: 70px;
     position: absolute;
@@ -61,8 +59,7 @@
     margin-right: auto;
     left: 0;
     right: 0;
-    border: 3px solid #dddddd;
-    box-sizing: border-box;
+    border: 2px solid #dddddd;
 }
 
 .t-name-container {

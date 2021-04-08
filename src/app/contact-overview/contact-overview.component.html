@@ -4,14 +4,14 @@
      fxLayoutGap="12px">
 
     <button mat-button
-            (click)="showFavorites = false;"
-            [ngClass]="{'t-primary-color': !showFavorites}">All contacts</button>
+            (click)="favoritesOnly = false;"
+            [ngClass]="{'t-primary-color': !favoritesOnly}">All contacts</button>
 
     <div class="t-divider"></div>
 
     <button mat-button
-            (click)="showFavorites = true;"
-            [ngClass]="{'t-primary-color': showFavorites}">My favorites</button>
+            (click)="favoritesOnly = true;"
+            [ngClass]="{'t-primary-color': favoritesOnly}">My favorites</button>
 </div>
 
-<app-contact-list [showFavorites]="showFavorites"></app-contact-list>
+<app-contact-list [favoritesOnly]="favoritesOnly"></app-contact-list>
