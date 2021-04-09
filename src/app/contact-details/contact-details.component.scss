@@ -16,6 +16,11 @@
     color: #bbc4c3;
 }
 
+.t-header mat-icon {
+    font-size: 18px;
+    height: 18px;
+}
+
 .t-details mat-icon {    
     color: #2ea1ad;
     font-size: 18px;
@@ -24,4 +29,18 @@
 
 .t-label {
     color: #2ea1ad;
+}
+
+.t-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.t-details {
+    color: #cacaca;
+    margin-top: 50px;
+}
+
+.t-number {
+    text-decoration: underline;
 }

@@ -17,35 +17,39 @@
                     <mat-icon>keyboard_return</mat-icon>
                 </button>
 
-                <div>
+                <div class="t-title">
                     {{contact.name}}
                 </div>
+
                 <span fxFlex></span>
+
                 <button mat-icon-button
                         *ngIf="contact.isFavorite"
                         (click)="toggleContactFavorite()">
                     <mat-icon>favorite</mat-icon>
                 </button>
+
                 <button mat-icon-button
                         *ngIf="!contact.isFavorite"
                         (click)="toggleContactFavorite()">
                     <mat-icon>favorite_border</mat-icon>
                 </button>
+
                 <button mat-icon-button
-                        class="t-edit-icon"
                         routerLink="/manage/{{contact.email}}">
                     <mat-icon>edit</mat-icon>
                 </button>
             </div>
 
             <div fxLayout="column"
-                 class="t-details">
+                 class="t-details"
+                 fxLayoutGap="50px">
                 <div fxLayout="row"
-                     fxLayoutGap="50px"
-                     fxLayoutAlign="center start">
+                     fxLayoutGap="50px">
                     <div fxLayout="row"
                          fxLayoutAlign="start center"
-                         fxLayoutGap="15px">
+                         fxLayoutGap="15px"
+                         fxFlex="150px">
                         <mat-icon>mail</mat-icon>
                         <span class="t-label">email</span>
                     </div>
@@ -55,11 +59,11 @@
                 </div>
 
                 <div fxLayout="row"
-                     fxLayoutAlign="center start"
                      fxLayoutGap="50px">
                     <div fxLayout="row"
-                         fxLayoutAlign="start center"
-                         fxLayoutGap="15px">
+                         fxLayoutAlign="start start"
+                         fxLayoutGap="15px"
+                         fxFlex="150px">
                         <mat-icon>phone</mat-icon>
                         <span class="t-label">numbers</span>
                     </div>
@@ -68,7 +72,7 @@
                             <div fxLayout="row"
                                  fxLayoutGap="30px">
                                 <div>{{number.type | uppercase}}</div>
-                                <div>{{number.number | uppercase}}</div>
+                                <div class="t-number">{{number.number}}</div>
                             </div>
                         </div>
                     </div>
